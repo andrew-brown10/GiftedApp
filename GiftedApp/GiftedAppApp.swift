@@ -3,6 +3,7 @@
 //  GiftedApp
 //
 //  Created by Andrew Brown on 12/14/24.
+//  Made goated by Zach Stevens-Lindsey on 12/15/24.
 //
 
 import SwiftUI
