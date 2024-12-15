@@ -7,9 +7,28 @@
 
 import SwiftUI
 
+
 struct SwiftUIView: View {
+    @State private var text: String = "Hello, World!"
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Circle().onTapGesture {
+                makeLeft()
+            }
+            Circle().onTapGesture {
+                makeRight()
+            }
+        }
+        Text("\(text)")
+    }
+    
+    private func makeLeft() {
+        text = "Left"
+    }
+    
+    private func makeRight() {
+        text = "Right"
     }
 }
 
