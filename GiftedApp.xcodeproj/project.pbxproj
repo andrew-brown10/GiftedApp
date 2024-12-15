@@ -35,11 +35,6 @@
 			path = GiftedApp;
 			sourceTree = "<group>";
 		};
-		794115D32D0E78CA0088994F /* GiftedAppTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GiftedAppTests;
-			sourceTree = "<group>";
-		};
 		794115DD2D0E78CA0088994F /* GiftedAppUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = GiftedAppUITests;
@@ -76,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				794115BF2D0E78C90088994F /* GiftedApp */,
-				794115D32D0E78CA0088994F /* GiftedAppTests */,
 				794115DD2D0E78CA0088994F /* GiftedAppUITests */,
 				794115BE2D0E78C90088994F /* Products */,
 			);
@@ -129,9 +123,6 @@
 			);
 			dependencies = (
 				794115D22D0E78CA0088994F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				794115D32D0E78CA0088994F /* GiftedAppTests */,
 			);
 			name = GiftedAppTests;
 			packageProductDependencies = (
