@@ -14,6 +14,7 @@ struct ContentView: View {
 
     var body: some View {
         Circle()
+        Circle()
     }
 
     private func addItem() {
