@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 0) { // Stack elements vertically
             BannerView() // Add the banner at the top
-            
+            SwiftUIView()
             TabView {
                 HomeView()
                     .tabItem {

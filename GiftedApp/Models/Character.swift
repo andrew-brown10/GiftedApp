@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-struct Character: Codable {
+struct Person: Codable {
     let Id: Int
     let Name: String
     let Relation: String

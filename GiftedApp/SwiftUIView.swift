@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-
 struct SwiftUIView: View {
     @State private var text: String = "Hello, World!"
+    @State private var user: Person?
 
     var body: some View {
         HStack{
@@ -19,8 +19,17 @@ struct SwiftUIView: View {
             Circle().onTapGesture {
                 makeRight()
             }
+            Text("\(text)")
         }
-        Text("\(text)")
+        .task {
+            do {
+                user = try await GiftedClient.shared.getCharacter()
+                text = user?.Description ?? "No description"
+            } catch {
+                user = nil
+                text = "Error with API"
+            }
+        }
     }
     
     private func makeLeft() {
