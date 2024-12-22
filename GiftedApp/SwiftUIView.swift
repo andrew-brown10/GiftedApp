@@ -14,30 +14,29 @@ struct SwiftUIView: View {
     var body: some View {
         HStack{
             Circle().onTapGesture {
-                makeLeft()
+                Task{
+                    await getNewCharacter()
+                }
             }
-            Circle().onTapGesture {
-                makeRight()
-            }
-            Text("\(text)")
+            Text("Name:\(user?.name ?? "Loading...")")
+            Text("Relationship:\(user?.relation ?? "Loading...")")
+            Text("Descripition:\(user?.description ?? "Loading...")")
         }
         .task {
             do {
                 user = try await GiftedClient.shared.getCharacter()
-                text = user?.Description ?? "No description"
             } catch {
                 user = nil
-                text = "Error with API"
             }
         }
     }
     
-    private func makeLeft() {
-        text = "Left"
-    }
-    
-    private func makeRight() {
-        text = "Right"
+    private func getNewCharacter() async {
+        do{
+            user = try await GiftedClient.shared.getCharacter()
+        } catch {
+            user = nil
+        }
     }
 }
 

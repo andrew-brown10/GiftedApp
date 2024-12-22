@@ -9,8 +9,8 @@ import Foundation
 import SwiftData
 
 struct Person: Codable {
-    let Id: Int
-    let Name: String
-    let Relation: String
-    let Description: String
+    let id: Int
+    let name: String
+    let relation: String
+    let description: String
 }

@@ -6,37 +6,44 @@
 //
 
 import Foundation
-
-class GiftedClient {
-    static let shared = GiftedClient()
     
-    private init() {}
-    
-    func getCharacter() async throws -> Person {
-        let endpoint = Endpoints.characters
-        guard let url = URL(string: endpoint) else {
-            throw GiftedError.invalidURL
-        }
-        do {
-            let (data, response) = try await URLSession.shared.data(from: url)
+    class GiftedClient {
+        static let shared = GiftedClient()
+        
+        private init() {}
+        
+        func getCharacter() async throws -> Person {
+            let endpoint = Endpoints.characters
+            guard let url = URL(string: endpoint) else {
+                throw GiftedError.invalidURL
+            }
+            
+            // Print the URL to verify it
+            print("URL: \(url)")
+            
             do {
+                let (data, response) = try await URLSession.shared.data(from: url)
+                
+                // Print the response to debug
+                if let httpResponse = response as? HTTPURLResponse {
+                    print("HTTP Status Code: \(httpResponse.statusCode)")
+                }
+                
+                // Print the data to debug
+                if let jsonString = String(data: data, encoding: .utf8) {
+                    print("Response Data: \(jsonString)")
+                }
+                
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 return try decoder.decode(Person.self, from: data)
             } catch {
+                print("Error: \(error.localizedDescription)")
                 throw GiftedError.invalidData
             }
-        } catch {
-            print("error: \(error.localizedDescription)")
-            throw GiftedError.invalidURL
         }
-        //guard let response = response as? HTTPURLResponse, response.statusCode == 200 else //{
-          //  throw GiftedError.invalidResponse
-        //}
-        
-        
-    }
 }
+
 
 enum GiftedError: Error {
     case invalidURL
