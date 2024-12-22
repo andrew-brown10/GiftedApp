@@ -7,28 +7,36 @@
 
 import SwiftUI
 
-
 struct SwiftUIView: View {
     @State private var text: String = "Hello, World!"
+    @State private var user: Person?
 
     var body: some View {
         HStack{
             Circle().onTapGesture {
-                makeLeft()
+                Task{
+                    await getNewCharacter()
+                }
             }
-            Circle().onTapGesture {
-                makeRight()
+            Text("Name:\(user?.name ?? "Loading...")")
+            Text("Relationship:\(user?.relation ?? "Loading...")")
+            Text("Descripition:\(user?.description ?? "Loading...")")
+        }
+        .task {
+            do {
+                user = try await GiftedClient.shared.getCharacter()
+            } catch {
+                user = nil
             }
         }
-        Text("\(text)")
     }
     
-    private func makeLeft() {
-        text = "Left"
-    }
-    
-    private func makeRight() {
-        text = "Right"
+    private func getNewCharacter() async {
+        do{
+            user = try await GiftedClient.shared.getCharacter()
+        } catch {
+            user = nil
+        }
     }
 }
 
