@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C87253CF-610A-4A7F-8F66-AB0AC9753831"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GiftedApp/Api/GiftedClient.swift"
@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DFF2C0D3-CFB3-47FD-AE9D-9AE560EDE77C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GiftedApp/Api/GiftedClient.swift"
@@ -34,36 +34,22 @@
             endingLineNumber = "30"
             landmarkName = "getCharacter()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DFF2C0D3-CFB3-47FD-AE9D-9AE560EDE77C - 4c59a6a4ed7ed624"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for GiftedApp.GiftedClient.getCharacter() async throws -&gt; GiftedApp.Person"
-                  moduleName = "GiftedApp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrewbrown/Desktop/Gifted/GiftedApp/GiftedApp/Api/GiftedClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30">
-               </Location>
-               <Location
-                  uuid = "DFF2C0D3-CFB3-47FD-AE9D-9AE560EDE77C - 80f08c1272c23425"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for GiftedApp.GiftedClient.getCharacter() async throws -&gt; GiftedApp.Person"
-                  moduleName = "GiftedApp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrewbrown/Desktop/Gifted/GiftedApp/GiftedApp/Api/GiftedClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE8FA570-863C-4F80-A7ED-D8AC7E43FA7D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GiftedApp/Views/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
