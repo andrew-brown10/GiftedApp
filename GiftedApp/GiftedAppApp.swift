@@ -8,9 +8,12 @@
 
 import SwiftUI
 import SwiftData
+import Firebase
 
 @main
 struct GiftedAppApp: App {
+    @StateObject private var authObject = AuthHelper() // Create the shared instance
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
         ])
@@ -22,10 +25,16 @@ struct GiftedAppApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    init() {
+        FirebaseApp.configure()
+        
+    }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(authObject)
         }
         .modelContainer(sharedModelContainer)
     }

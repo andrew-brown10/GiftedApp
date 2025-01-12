@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7964994B2D33772600840052 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7964994A2D33772600840052 /* FirebaseAuth */; };
+		7964994D2D33772600840052 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7964994C2D33772600840052 /* FirebaseCore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		794115D12D0E78CA0088994F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +34,38 @@
 		794115DA2D0E78CA0088994F /* GiftedAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiftedAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		796499422D33753E00840052 /* Exceptions for "GiftedApp" folder in "GiftedApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 794115BC2D0E78C90088994F /* GiftedApp */;
+		};
+		796499472D33767900840052 /* Exceptions for "GiftedApp" folder in "GiftedAppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"GoogleService-Info.plist",
+			);
+			target = 794115CF2D0E78CA0088994F /* GiftedAppTests */;
+		};
+		796499482D33767900840052 /* Exceptions for "GiftedApp" folder in "GiftedAppUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"GoogleService-Info.plist",
+			);
+			target = 794115D92D0E78CA0088994F /* GiftedAppUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		794115BF2D0E78C90088994F /* GiftedApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				796499422D33753E00840052 /* Exceptions for "GiftedApp" folder in "GiftedApp" target */,
+				796499472D33767900840052 /* Exceptions for "GiftedApp" folder in "GiftedAppTests" target */,
+				796499482D33767900840052 /* Exceptions for "GiftedApp" folder in "GiftedAppUITests" target */,
+			);
 			path = GiftedApp;
 			sourceTree = "<group>";
 		};
@@ -47,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7964994D2D33772600840052 /* FirebaseCore in Frameworks */,
+				7964994B2D33772600840052 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +142,8 @@
 			);
 			name = GiftedApp;
 			packageProductDependencies = (
+				7964994A2D33772600840052 /* FirebaseAuth */,
+				7964994C2D33772600840052 /* FirebaseCore */,
 			);
 			productName = GiftedApp;
 			productReference = 794115BD2D0E78C90088994F /* GiftedApp.app */;
@@ -186,6 +224,9 @@
 			);
 			mainGroup = 794115B42D0E78C90088994F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				796499492D33772600840052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 794115BE2D0E78C90088994F /* Products */;
 			projectDirPath = "";
@@ -584,6 +625,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		796499492D33772600840052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7964994A2D33772600840052 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 796499492D33772600840052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		7964994C2D33772600840052 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 796499492D33772600840052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 794115B52D0E78C90088994F /* Project object */;
 }
