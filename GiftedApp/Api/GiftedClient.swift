@@ -73,13 +73,22 @@ import Foundation
             }
         }
         
-        func CreateUser(userId: String, firstName: String, lastName: String) async  throws -> User {
-            let endpoint = Endpoints.getUser + "/id=\(userId)"
+        func CreateUser(userId: String, firstName: String, lastName: String, email: String) async  throws -> User {
+            let endpoint = Endpoints.createUser
             guard let url = URL(string: endpoint) else {
                 throw GiftedError.invalidURL
             }
             
             print("URL: \(url)")
+            
+            var urlRequest = URLRequest(url: url)
+                    urlRequest.httpMethod = "POST"
+                    urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            let requestBody = CreateUserRequestModel(Id: userId, FirstName: firstName, LastName: lastName, Email: email)
+                    let encoder = JSONEncoder()
+                    urlRequest.httpBody = try encoder.encode(requestBody)
+            
             
             do {
                 let (data, response) = try await URLSession.shared.data(from: url)

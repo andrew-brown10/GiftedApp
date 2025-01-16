@@ -24,20 +24,13 @@ struct OnboardingView: View {
                     .padding()
                 HStack {
                     Button("Next") {
-                        GiftedClient.shared.createUser(firstName: firstName, lastName: lastName)
+                        GiftedClient.shared.CreateUser(userId: userSlice.user?.Id, firstName: firstName, lastName: lastName, email: userSlice.user?.Email)
                         Task {
                             await userSlice.fetchUserProfile(userId: <#T##String#> )
                         }
                     }
-                    Button("Sign Up") {
-                        viewModel.signUp(email: email, password: password)
-                        Task {
-                            await userSlice.fetchUserProfile(userId: <#T##String#>)
-                        }
-                    }
+
                 }
-                Text(viewModel.errorMessage ?? "")
-                    .foregroundColor(.red)
         }
         .padding()
     }
