@@ -33,6 +33,8 @@ class AuthHelper: ObservableObject {
             self.user = result?.user
             if let user = Auth.auth().currentUser {
                 self.userId = user.uid
+                //Call create user API
+                
             }
             self.isSignedIn = true
         }

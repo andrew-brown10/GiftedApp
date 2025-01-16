@@ -1,30 +1,30 @@
 //
-//  LoginView.swift
+//  OnboardingView.swift
 //  GiftedApp
 //
-//  Created by Andrew Brown on 1/11/25.
+//  Created by Andrew Brown on 1/15/25.
 //
 
+import Foundation
 import SwiftUI
 
-struct LoginView: View {
-    @EnvironmentObject var viewModel: AuthHelper
+struct OnboardingView: View {
     @EnvironmentObject var userSlice: UserSlice
     
-    @State private var email = ""
-    @State private var password = ""
+    @State private var firstName = ""
+    @State private var lastName = ""
 
     var body: some View {
         VStack {
-                TextField("Email", text: $email)
+                TextField("First Name", text: $firstName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                SecureField("Password", text: $password)
+                TextField("LastName", text: $lastName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 HStack {
-                    Button("Sign In") {
-                        viewModel.signIn(email: email, password: password)
+                    Button("Next") {
+                        GiftedClient.shared.createUser(firstName: firstName, lastName: lastName)
                         Task {
                             await userSlice.fetchUserProfile(userId: <#T##String#> )
                         }

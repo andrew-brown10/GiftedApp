@@ -12,12 +12,22 @@ import SwiftData
 
 struct ContentView: View {
     @EnvironmentObject var authHelper: AuthHelper
+    @StateObject private var userSlice = UserSlice()
 
     var body: some View {
         //If user is not signed in, show the login screen
         if !authHelper.isSignedIn {
             LoginView()
-        } else {
+                .environmentObject(userSlice)
+        }
+        //If user is signed in but has not completed onboard, show the onboarding screen
+        if authHelper.isSignedIn && userSlice.user?.FirstName == nil {
+            OnboardingView()
+                .environmentObject(userSlice)
+        }
+            
+        //If user is signed in and completed onboard, show the main app
+        if authHelper.isSignedIn && userSlice.user?.FirstName != nil {
             VStack(spacing: 0) { // Stack elements vertically
                 BannerView() // Add the banner at the top
                 SwiftUIView()
