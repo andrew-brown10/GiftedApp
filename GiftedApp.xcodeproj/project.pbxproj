@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		575CAF822D3C0C9C00D7A6E7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 575CAF812D3C0C9C00D7A6E7 /* FirebaseAuth */; };
-		576BDE772D35596600CC22C3 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 576BDE762D35596600CC22C3 /* FirebaseCore */; };
+		7964994B2D33772600840052 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7964994A2D33772600840052 /* FirebaseAuth */; };
+		7964994D2D33772600840052 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7964994C2D33772600840052 /* FirebaseCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +35,26 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		575CAF802D3C0C0500D7A6E7 /* Exceptions for "GiftedApp" folder in "GiftedApp" target */ = {
+		796499422D33753E00840052 /* Exceptions for "GiftedApp" folder in "GiftedApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
 			target = 794115BC2D0E78C90088994F /* GiftedApp */;
+		};
+		796499472D33767900840052 /* Exceptions for "GiftedApp" folder in "GiftedAppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"GoogleService-Info.plist",
+			);
+			target = 794115CF2D0E78CA0088994F /* GiftedAppTests */;
+		};
+		796499482D33767900840052 /* Exceptions for "GiftedApp" folder in "GiftedAppUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"GoogleService-Info.plist",
+			);
+			target = 794115D92D0E78CA0088994F /* GiftedAppUITests */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -48,7 +62,9 @@
 		794115BF2D0E78C90088994F /* GiftedApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				575CAF802D3C0C0500D7A6E7 /* Exceptions for "GiftedApp" folder in "GiftedApp" target */,
+				796499422D33753E00840052 /* Exceptions for "GiftedApp" folder in "GiftedApp" target */,
+				796499472D33767900840052 /* Exceptions for "GiftedApp" folder in "GiftedAppTests" target */,
+				796499482D33767900840052 /* Exceptions for "GiftedApp" folder in "GiftedAppUITests" target */,
 			);
 			path = GiftedApp;
 			sourceTree = "<group>";
@@ -65,8 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				576BDE772D35596600CC22C3 /* FirebaseCore in Frameworks */,
-				575CAF822D3C0C9C00D7A6E7 /* FirebaseAuth in Frameworks */,
+				7964994D2D33772600840052 /* FirebaseCore in Frameworks */,
+				7964994B2D33772600840052 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,8 +142,8 @@
 			);
 			name = GiftedApp;
 			packageProductDependencies = (
-				576BDE762D35596600CC22C3 /* FirebaseCore */,
-				575CAF812D3C0C9C00D7A6E7 /* FirebaseAuth */,
+				7964994A2D33772600840052 /* FirebaseAuth */,
+				7964994C2D33772600840052 /* FirebaseCore */,
 			);
 			productName = GiftedApp;
 			productReference = 794115BD2D0E78C90088994F /* GiftedApp.app */;
@@ -209,7 +225,7 @@
 			mainGroup = 794115B42D0E78C90088994F;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				576BDE752D3558C700CC22C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				796499492D33772600840052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 794115BE2D0E78C90088994F /* Products */;
@@ -337,7 +353,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -393,7 +408,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -410,10 +424,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GiftedApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 86G68T6D2F;
+				DEVELOPMENT_TEAM = 3L3FU3LSR9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GiftedApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -424,7 +439,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -432,11 +447,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.InnovativeProjects.GiftedApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
@@ -450,10 +464,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GiftedApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 86G68T6D2F;
+				DEVELOPMENT_TEAM = 3L3FU3LSR9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GiftedApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -464,7 +479,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -472,11 +487,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.InnovativeProjects.GiftedApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
@@ -487,7 +501,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 86G68T6D2F;
+				DEVELOPMENT_TEAM = 3L3FU3LSR9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
@@ -510,7 +524,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 86G68T6D2F;
+				DEVELOPMENT_TEAM = 3L3FU3LSR9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
@@ -532,7 +546,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 86G68T6D2F;
+				DEVELOPMENT_TEAM = 3L3FU3LSR9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
@@ -554,7 +568,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 86G68T6D2F;
+				DEVELOPMENT_TEAM = 3L3FU3LSR9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
@@ -613,7 +627,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		576BDE752D3558C700CC22C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		796499492D33772600840052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -624,14 +638,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		575CAF812D3C0C9C00D7A6E7 /* FirebaseAuth */ = {
+		7964994A2D33772600840052 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 576BDE752D3558C700CC22C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 796499492D33772600840052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		576BDE762D35596600CC22C3 /* FirebaseCore */ = {
+		7964994C2D33772600840052 /* FirebaseCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 576BDE752D3558C700CC22C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 796499492D33772600840052 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCore;
 		};
 /* End XCSwiftPackageProductDependency section */
