@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
-    @State private var text: String = "Hello, World!"
+struct Character: View {
     @State private var user: Person?
 
     var body: some View {
@@ -41,5 +40,5 @@ struct SwiftUIView: View {
 }
 
 #Preview {
-    SwiftUIView()
+    Character()
 }

@@ -20,7 +20,6 @@ struct ContentView: View {
         } else {
             VStack(spacing: 0) { // Stack elements vertically
                 BannerView() // Add the banner at the top
-                SwiftUIView()
                 TabView {
                     HomeView()
                         .tabItem {
@@ -45,37 +44,5 @@ struct ContentView: View {
                 .tint(Color("GiftedRedColor"))
             }
         }
-    }
-}
-
-struct GiftCircleView: View {
-    var body: some View {
-        Text("Gift Circle")
-            .font(.largeTitle)
-            .padding()
-    }
-}
-
-struct ProfileView: View {
-    @EnvironmentObject var authHelper: AuthHelper
-
-    var body: some View {
-        VStack() {
-            Text("User Id: \($authHelper.userId.wrappedValue)")
-                .font(.title)
-                
-                
-            Button("Sign Out") {
-                authHelper.signOut()
-            }
-        }
-    }
-}
-
-struct SettingsView: View {
-    var body: some View {
-        Text("Settings")
-            .font(.largeTitle)
-            .padding()
     }
 }
