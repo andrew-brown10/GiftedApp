@@ -77,6 +77,7 @@ struct HomeView: View {
         isSomeoneNewTapped = false
         name = ""
         age = 0
+        isSomeoneFromGiftCircleTapped = false
     }
     
     private func createButton(
