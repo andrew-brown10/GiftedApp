@@ -38,7 +38,3 @@ struct Character: View {
         }
     }
 }
-
-#Preview {
-    Character()
-}
