@@ -9,6 +9,7 @@ import Foundation
 import SwiftData
 
 struct GiftRecipientData {
+    var relationshipToUser: String
     var name: String
     var age: Int
     var occasion: String

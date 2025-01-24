@@ -14,11 +14,6 @@ struct ProfileView: View {
         VStack() {
             Text("User Id: \($authHelper.userId.wrappedValue)")
                 .font(.title)
-                
-                
-            Button("Sign Out") {
-                authHelper.signOut()
-            }
         }
     }
 }

@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var authHelper: AuthHelper
+    
     var body: some View {
-        Text("Settings")
-            .font(.largeTitle)
-            .padding()
+        Button("Sign Out") {
+            authHelper.signOut()
+        }
     }
 }

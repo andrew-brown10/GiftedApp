@@ -11,9 +11,6 @@ struct GiftCircleView: View {
     var body: some View {
     VStack {
         Character()
-            Text("Gift Circle")
-                .font(.largeTitle)
-                .padding()
         }
     }
 }
