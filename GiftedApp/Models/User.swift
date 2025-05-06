@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 struct User: Codable {
-    var Id: Int
+    var Id: String
     var FirstName: String
     var LastName: String
     var Email: String

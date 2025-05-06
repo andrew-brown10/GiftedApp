@@ -73,7 +73,7 @@ import Foundation
             }
         }
         
-        func CreateUser(userId: String, firstName: String, lastName: String, email: String) async  throws -> User {
+        func CreateUser(user: CreateUserRequestModel) async  throws -> User {
             let endpoint = Endpoints.createUser
             guard let url = URL(string: endpoint) else {
                 throw GiftedError.invalidURL
@@ -85,7 +85,7 @@ import Foundation
                     urlRequest.httpMethod = "POST"
                     urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-            let requestBody = CreateUserRequestModel(Id: userId, FirstName: firstName, LastName: lastName, Email: email)
+            let requestBody = user
                     let encoder = JSONEncoder()
                     urlRequest.httpBody = try encoder.encode(requestBody)
             

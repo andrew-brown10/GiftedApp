@@ -9,16 +9,22 @@ import SwiftUI
 import FirebaseAuth
 
 class AuthHelper: ObservableObject {
-    @Published var user: User? = nil
+    @Published var user: GiftedApp.User? = nil
+    @Published var authUser: FirebaseAuth.User? = nil
     @Published var isSignedIn: Bool = false
     @Published var errorMessage: String? = nil // For showing errors
     @Published var userId: String = ""
+    @EnvironmentObject var userSlice: UserSlice
 
 
     init() {
-        self.user = Auth.auth().currentUser
+        self.authUser = Auth.auth().currentUser
         if let user = Auth.auth().currentUser {
             self.userId = user.uid
+            //Convert uid to string and store in gifted user object
+            self.user?.Id = user.uid
+            self.user?.Email = user.email ?? ""
+            
         }
         self.isSignedIn = user != nil
     }
@@ -30,11 +36,9 @@ class AuthHelper: ObservableObject {
                 self.errorMessage = error.localizedDescription
                 return
             }
-            self.user = result?.user
+            self.authUser = result?.user as? FirebaseAuth.User
             if let user = Auth.auth().currentUser {
                 self.userId = user.uid
-                //Call create user API
-                
             }
             self.isSignedIn = true
         }
@@ -47,7 +51,7 @@ class AuthHelper: ObservableObject {
                 self.errorMessage = error.localizedDescription
                 return
             }
-            self.user = result?.user
+            self.authUser = result?.user as? FirebaseAuth.User
             if let user = Auth.auth().currentUser {
                 self.userId = user.uid
             }

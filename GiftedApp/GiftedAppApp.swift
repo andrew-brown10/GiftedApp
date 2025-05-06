@@ -12,7 +12,8 @@ import Firebase
 
 @main
 struct GiftedAppApp: App {
-    @StateObject private var authObject = AuthHelper() // Create the shared instance
+    @StateObject private var authObject = AuthHelper()
+    @StateObject private var userSlice = UserSlice()// Create the shared instance
 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -33,8 +34,9 @@ struct GiftedAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
                 .environmentObject(authObject)
+                .environmentObject(userSlice)
         }
         .modelContainer(sharedModelContainer)
     }

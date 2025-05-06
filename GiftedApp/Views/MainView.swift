@@ -10,27 +10,28 @@ import SwiftData
 
 
 
-struct ContentView: View {
+struct MainView: View {
     @EnvironmentObject var authHelper: AuthHelper
-    @StateObject private var userSlice = UserSlice()
-
+    @EnvironmentObject var userSlice: UserSlice
+    
+    private func loadUserSlice() async {
+        await userSlice.fetchUserProfile(userId: authHelper.userId)
+    }
+    
     var body: some View {
         //If user is not signed in, show the login screen
         if !authHelper.isSignedIn {
             LoginView()
                 .environmentObject(userSlice)
-        }
-        //If user is signed in but has not completed onboard, show the onboarding screen
-        if authHelper.isSignedIn && userSlice.user?.FirstName == nil {
-            OnboardingView()
-                .environmentObject(userSlice)
+                .environmentObject(authHelper)
         }
             
         //If user is signed in and completed onboard, show the main app
         if authHelper.isSignedIn && userSlice.user?.FirstName != nil {
             VStack(spacing: 0) { // Stack elements vertically
+                Text("Welcome, \(userSlice.user?.FirstName ?? "User")!")
+                    
                 BannerView() // Add the banner at the top
-                SwiftUIView()
                 TabView {
                     HomeView()
                         .tabItem {
@@ -53,6 +54,9 @@ struct ContentView: View {
                         }
                 }
                 .tint(Color("GiftedRedColor"))
+            }
+            .task {
+                await loadUserSlice()
             }
         }
     }
@@ -88,4 +92,10 @@ struct SettingsView: View {
             .font(.largeTitle)
             .padding()
     }
+}
+
+#Preview {
+    MainView()
+        .environmentObject(AuthHelper())
+        .environmentObject(UserSlice())
 }
